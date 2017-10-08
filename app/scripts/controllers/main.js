@@ -8,7 +8,7 @@
  * Controller of the marvelAngularApp
  */
 angular.module('marvelAngularApp')
-  .controller('MainCtrl', ['apiService', '$timeout', 'paginationService', function (apiService, $timeout, paginationService) {
+  .controller('MainCtrl', ['apiService', '$timeout', 'paginationService', '$location', function (apiService, $timeout, paginationService, $location) {
 
     const self = this;
     this.comics = [];
@@ -48,6 +48,10 @@ angular.module('marvelAngularApp')
       self.comics = [];
       self.loaded = false;
       self.updateData();
+    };
+
+    this.gotoDetails = function(comicId) {
+      $location.path('/comic/'+comicId);
     };
 
     this.updateData();

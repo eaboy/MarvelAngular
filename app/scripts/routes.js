@@ -15,6 +15,11 @@ angular.module('marvelAngularApp')
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/comic/:id', {
+        templateUrl: 'views/comicDetails.html',
+        controller: 'ComicDetailsCtrl',
+        controllerAs: 'comic'
+      })
       .otherwise({
         redirectTo: '/'
       });
