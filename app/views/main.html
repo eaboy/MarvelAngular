@@ -5,13 +5,12 @@
   <div class="row">
     <section class="main-section">
       <h2 class="section-title">{{main.hulk.name}}</h2>
-      <div class="loading-state" ng-if="!main.loaded && !main.error">Loading comic list... <div class="loader"></div></div>
-      <div class="error-state" ng-if="main.error">There was an error while loading comic list, please try again later.</div>
+      <ui-loading-and-error loaded="main.loaded" error="main.error" text="comic list"></ui-loading-and-error>
       <div class="comic-list ideal-state" ng-if="main.loaded">
         <article class="comic-card" ng-repeat="comic in main.comics">
           <h4 class="comic-name">{{comic.title}}</h4>
           <img ng-src="{{comic.thumbnail.path+'/portrait_fantastic.'+comic.thumbnail.extension}}" alt="" class="comic-thumbnail">
-          <button class="btn btn-success goto-details"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          <button class="btn btn-success goto-details" ng-click="main.gotoDetails(comic.id)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </article>
       </div>
     </section>
