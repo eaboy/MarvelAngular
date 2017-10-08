@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'hulkfont';
+    src: url(../styles/fonts/hulk3d2.ttf) format('truetype');
+  }
+
+body {
+    background-color: #8BFA4D;
+}
+
+section{
+    padding: 0 10px;
+}
+
+.navbar-default {
+    background-color: darken(#8BFA4D, 30%);
+    .navbar-brand{
+        font-family: 'hulkfont';
+        font-size: 1.3em;
+        font-weight: bold;
+        color: black;
+    }
+}
+

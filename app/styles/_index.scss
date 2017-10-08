@@ -1,0 +1,116 @@
+.jumbotron {
+    background-image: url(../images/header-sm.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 250px;
+    margin-top: -15px;
+}
+
+.section-title{
+    font-family: 'hulkfont';
+    color: black;
+}
+
+.error-state,.loading-state {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0;
+    .loader {
+        margin: 20px auto;
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid darken(#8BFA4D, 30%);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+    }
+}
+
+.comic-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .comic-card{
+        width: 300px;
+        border-color: #d2d2d2;
+        box-shadow: 0 1px 0 #cfcfcf;
+        border-radius: 3px;
+        background-color: whitesmoke;
+        padding: 10px;
+        margin-bottom: 10px;
+        transition: all .5s ease-in-out;
+        &:hover{
+            transform: scale(1.05);
+        }
+        &.ng-enter {
+            transition: 1.5s;
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            opacity: 1;
+        }
+        .comic-name {
+            width: calc(300px - 20px);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+        }
+    }
+}
+
+.goto-details {
+    border-radius: 100%;
+    font-size: 1.8em;
+    margin-left: 20px;
+}
+
+.pagination-area {
+    text-align: center;
+    & .pagination li a {
+        color: darken(#8BFA4D, 30%);
+    }
+    & .pagination .active a {
+        color: #fff;
+        background-color: darken(#8BFA4D, 30%);
+        border-color: darken(#8BFA4D, 30%);
+    }
+}
+
+@media (min-width: $screen-xs-min) {
+    .jumbotron {
+        background-image: url(../images/header-md.jpg);
+        height: 350px;
+    }
+    .comic-list{
+        .comic-card {
+            width: 400px;
+            .comic-name{
+                width: calc(400px - 20px);
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .comic-list{
+        .comic-card {
+            width: 300px;
+            .comic-name{
+                width: calc(300px - 20px);
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .jumbotron {
+        background-image: url(../images/header-lg.jpg);
+        height: 450px;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

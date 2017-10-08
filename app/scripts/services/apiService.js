@@ -17,16 +17,16 @@ angular.module('marvelAngularApp')
     }
 
     // Function to retrieve data from API. Receives the resource as a parameter
-    this.getData = function (resource) {
+    this.getData = function (resource, offset) {
       var ts = new Date().getTime();
       return $resource(baseURL + resource, null, {
-        'query': {
+        'get': {
           method: 'GET',
-          isArray: false,
           params: {
             ts: ts,
             apikey: publicKey,
-            hash: getHash(ts)
+            hash: getHash(ts),
+            offset: offset
           }
         }
       });
