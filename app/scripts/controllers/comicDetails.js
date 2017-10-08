@@ -18,7 +18,7 @@ angular.module('marvelAngularApp')
     apiService.getData('comics/'+comicId).get(
         function (response) {
           self.loaded = true;
-          self.comic = response.data.results[0];
+          self.data = response.data.results[0];
         },
         function (error) {
           self.error = true;

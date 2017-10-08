@@ -9,7 +9,7 @@
       <div class="comic-list ideal-state" ng-if="main.loaded">
         <article class="comic-card" ng-repeat="comic in main.comics">
           <h4 class="comic-name">{{comic.title}}</h4>
-          <img ng-src="{{comic.thumbnail.path+'/portrait_fantastic.'+comic.thumbnail.extension}}" alt="" class="comic-thumbnail">
+          <img ng-src="{{comic.thumbnail.path+'/portrait_fantastic.'+comic.thumbnail.extension}}" alt="{{comic.title}}" class="comic-thumbnail">
           <button class="btn btn-success goto-details" ng-click="main.gotoDetails(comic.id)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </article>
       </div>

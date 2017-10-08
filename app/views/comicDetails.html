@@ -1,1 +1,12 @@
 <ui-loading-and-error loaded="comic.loaded" error="comic.error" text="comic data"></ui-loading-and-error>
+<div class="comic-detail container" ng-if="comic.data">
+    <div class="row">
+        <div class="comic-image col-xs-12 col-sm-5 col-md-4 col-lg-3">
+            <img ng-src="{{comic.data.thumbnail.path+'/portrait_uncanny.'+comic.data.thumbnail.extension}}" alt="{{comic.data.title}}">
+        </div>
+        <div class="comic-info col-xs-12 col-sm-7 col-md-8 col-lg-9">
+            <h2 class="comic-title">{{comic.data.title}}</h2>
+            <p class="description">{{comic.data.description}}</p>
+        </div>
+    </div>
+</div>
