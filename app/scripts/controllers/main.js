@@ -10,11 +10,11 @@
 angular.module('marvelAngularApp')
   .controller('MainCtrl', ['apiService', '$timeout', 'paginationService', '$location', function (apiService, $timeout, paginationService, $location) {
 
-    const self = this;
+    var self = this;
     this.comics = [];
     this.loaded = false;
     this.error = false;
-    const itemsPerPage = 20;
+    var itemsPerPage = 20;
     this.actualPage = 1;
 
     apiService.getData('characters/1009351').get(

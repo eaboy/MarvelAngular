@@ -10,8 +10,8 @@
 angular.module('marvelAngularApp')
   .controller('ComicDetailsCtrl', ['apiService', '$routeParams', function (apiService, $routeParams) {
     
-    const self = this;
-    const comicId = $routeParams.id;
+    var self = this;
+    var comicId = $routeParams.id;
     this.loaded = false;
     this.error = false;
 
