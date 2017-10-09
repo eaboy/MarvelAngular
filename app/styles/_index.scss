@@ -11,28 +11,12 @@
     color: black;
 }
 
-.error-state,.loading-state {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    margin: 50px 0;
-    .loader {
-        margin: 20px auto;
-        border: 6px solid #f3f3f3;
-        border-top: 6px solid darken(#8BFA4D, 30%);
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        animation: spin 2s linear infinite;
-    }
-}
-
 .comic-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     .comic-card{
-        width: 300px;
+        width: $comic-card-basic-wd;
         border-color: #d2d2d2;
         box-shadow: 0 1px 0 #cfcfcf;
         border-radius: 3px;
@@ -51,7 +35,7 @@
             opacity: 1;
         }
         .comic-name {
-            width: calc(300px - 20px);
+            width: calc($comic-card-basic-wd - 20px);
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow-x: hidden;
@@ -68,12 +52,12 @@
 .pagination-area {
     text-align: center;
     & .pagination li a {
-        color: darken(#8BFA4D, 30%);
+        color: $dark-color;
     }
     & .pagination .active a {
         color: #fff;
-        background-color: darken(#8BFA4D, 30%);
-        border-color: darken(#8BFA4D, 30%);
+        background-color: $dark-color;
+        border-color: $dark-color;
     }
 }
 
@@ -84,9 +68,9 @@
     }
     .comic-list{
         .comic-card {
-            width: 400px;
+            width: $comic-card-second-wd;
             .comic-name{
-                width: calc(400px - 20px);
+                width: calc($comic-card-second-wd - 20px);
             }
         }
     }
@@ -95,9 +79,9 @@
 @media (min-width: $screen-sm-min) {
     .comic-list{
         .comic-card {
-            width: 300px;
+            width: $comic-card-basic-wd;
             .comic-name{
-                width: calc(300px - 20px);
+                width: calc($comic-card-basic-wd - 20px);
             }
         }
     }

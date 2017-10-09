@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'hulkfont';
+    src: url(../styles/fonts/hulk3d2.ttf) format('truetype');
+  }
+
+body {
+    background-color: $main-color;
+}
+
+section{
+    padding: 0 10px;
+}
+
+.navbar-default {
+    background-color: $dark-color;
+    .navbar-brand{
+        font-family: 'hulkfont';
+        font-size: 1.5em;
+        font-weight: bold;
+        color: black;
+    }
+}
+
+.error-state,.loading-state {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0;
+    .loader {
+        margin: 20px auto;
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid $dark-color;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+    }
+}
