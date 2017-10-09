@@ -1,11 +1,15 @@
 <section class="comic-details-section">
   <article>
+    <!-- Ui loading and error status directive -->
     <ui-loading-and-error loaded="comic.loaded" error="comic.error" text="comic data"></ui-loading-and-error>
+    <!-- Ideal state section -->
     <div class="container-fluid" ng-if="comic.data">
       <div class="comic-detail row">
+        <!-- Comic image area -->
         <div class="comic-image col-xs-12 col-sm-5 col-md-4">
           <img ng-src="{{comic.data.thumbnail.path+'/portrait_uncanny.'+comic.data.thumbnail.extension}}" alt="{{comic.data.title}}">
         </div>
+        <!-- Comic info area -->
         <div class="comic-info col-xs-12 col-sm-7 col-md-8">
           <h2 class="comic-title">{{comic.data.title}}</h2>
           <p class="description">{{comic.data.description}}</p>
@@ -22,6 +26,7 @@
                 <li ng-repeat="creator in comic.data.creators.items track by $index">{{creator.name}}</li>
               </ul>
             </div>
+            <!-- Data table -->
             <table class="table table-hover table-bordered">
               <thead>
                 <tr>

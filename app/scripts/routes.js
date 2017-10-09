@@ -10,17 +10,17 @@
 angular.module('marvelAngularApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/', { // Main route
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/comic/:id', {
+      .when('/comic/:id', { // Comic details route
         templateUrl: 'views/comicDetails.html',
         controller: 'ComicDetailsCtrl',
         controllerAs: 'comic'
       })
-      .otherwise({
+      .otherwise({ // Default route
         redirectTo: '/'
       });
   });

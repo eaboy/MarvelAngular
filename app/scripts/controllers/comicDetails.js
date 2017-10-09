@@ -10,11 +10,13 @@
 angular.module('marvelAngularApp')
   .controller('ComicDetailsCtrl', ['apiService', '$routeParams', function (apiService, $routeParams) {
 
+    // Variables declaration and initilization
     var self = this;
     var comicId = $routeParams.id;
     this.loaded = false;
     this.error = false;
 
+    // Receives data of the comic by comicId receiver as a route param
     apiService.getData('comics/' + comicId).get(
       function (response) {
         self.loaded = true;
