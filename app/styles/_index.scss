@@ -16,11 +16,12 @@
     flex-wrap: wrap;
     justify-content: space-around;
     .comic-card{
+        min-width: $comic-card-basic-wd;
         width: $comic-card-basic-wd;
         border-color: #d2d2d2;
         box-shadow: 0 1px 0 #cfcfcf;
         border-radius: 3px;
-        background-color: whitesmoke;
+        background-color: $white-color;
         padding: 10px;
         margin-bottom: 10px;
         transition: all .5s ease-in-out;
@@ -39,14 +40,9 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow-x: hidden;
+            line-height: unset;
         }
     }
-}
-
-.goto-details {
-    border-radius: 100%;
-    font-size: 1.8em;
-    margin-left: 20px;
 }
 
 .pagination-area {
@@ -55,7 +51,7 @@
         color: $dark-color;
     }
     & .pagination .active a {
-        color: #fff;
+        color: $white-color;
         background-color: $dark-color;
         border-color: $dark-color;
     }

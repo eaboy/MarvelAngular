@@ -13,11 +13,11 @@ section{
 
 .navbar-default {
     background-color: $dark-color;
+    border: none;
     .navbar-brand{
         font-family: 'hulkfont';
-        font-size: 1.5em;
-        font-weight: bold;
-        color: black;
+        font-size: 1.7em;
+        color: $white-color;
     }
 }
 
@@ -35,4 +35,10 @@ section{
         height: 80px;
         animation: spin 2s linear infinite;
     }
+}
+
+.footer {
+    height: 50px;
+    background-color: $dark-color; 
+    color: whitesmoke;
 }

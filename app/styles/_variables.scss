@@ -1,5 +1,6 @@
-$main-color: #8BFA4D;
-$dark-color: darken(#8BFA4D, 30%);
+$main-color: #4CAF50;
+$dark-color: darken($main-color, 30%);
+$white-color: whitesmoke;
 
 $comic-card-basic-wd: 300px;
 $comic-card-second-wd: 400px;

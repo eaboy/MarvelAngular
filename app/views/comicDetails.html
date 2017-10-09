@@ -7,7 +7,7 @@
       <div class="comic-detail row">
         <!-- Comic image area -->
         <div class="comic-image col-xs-12 col-sm-5 col-md-4">
-          <img ng-src="{{comic.data.thumbnail.path+'/portrait_uncanny.'+comic.data.thumbnail.extension}}" alt="{{comic.data.title}}">
+          <img class="img-responsive center-block" ng-src="{{comic.data.thumbnail.path+'/portrait_uncanny.'+comic.data.thumbnail.extension}}" alt="{{comic.data.title}}">
         </div>
         <!-- Comic info area -->
         <div class="comic-info col-xs-12 col-sm-7 col-md-8">
@@ -30,7 +30,7 @@
             <table class="table table-hover table-bordered">
               <thead>
                 <tr>
-                  <th colspan="2">Comic data</th>
+                  <th colspan="2">Comic data:</th>
                 </tr>
               </thead>
               <tbody>
@@ -59,7 +59,7 @@
                   <td>{{comic.data.prices[0].price | currency:'$'}}</td>
                 </tr>
                 <tr>
-                  <td class="center-text" colspan="2">
+                  <td class="text-center" colspan="2">
                     <a href="{{comic.data.urls[0].url}}" target="_blank">More info</a>
                   </td>
                 </tr>
