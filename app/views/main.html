@@ -11,12 +11,9 @@
       <ui-loading-and-error loaded="main.loaded" error="main.error" text="comic list"></ui-loading-and-error>
       <!-- Ideal state section -->
       <div class="comic-list ideal-state" ng-if="main.loaded">
-        <article class="comic-card" ng-repeat="comic in main.comics">
+        <article class="comic-card" ng-repeat="comic in main.comics" ng-click="main.gotoDetails(comic.id)">
           <h4 class="comic-name">{{comic.title}}</h4>
-          <img ng-src="{{comic.thumbnail.path+'/portrait_fantastic.'+comic.thumbnail.extension}}" alt="{{comic.title}}" class="comic-thumbnail">
-          <button class="btn btn-success goto-details" ng-click="main.gotoDetails(comic.id)">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
+          <img class="img-responsive center-block" ng-src="{{comic.thumbnail.path+'/portrait_fantastic.'+comic.thumbnail.extension}}" alt="{{comic.title}}" class="comic-thumbnail">
         </article>
       </div>
     </section>
