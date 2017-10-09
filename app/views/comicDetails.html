@@ -1,66 +1,68 @@
 <section class="comic-details-section">
-    <article>
-        <ui-loading-and-error loaded="comic.loaded" error="comic.error" text="comic data"></ui-loading-and-error>
-        <div class="container-fluid" ng-if="comic.data">
-            <div class="comic-detail row">
-                <div class="comic-image col-xs-12 col-sm-5 col-md-4">
-                    <img ng-src="{{comic.data.thumbnail.path+'/portrait_uncanny.'+comic.data.thumbnail.extension}}" alt="{{comic.data.title}}">
-                </div>
-                <div class="comic-info col-xs-12 col-sm-7 col-md-8">
-                    <h2 class="comic-title">{{comic.data.title}}</h2>
-                    <p class="description">{{comic.data.description}}</p>
-                    <div class="comic-data">
-                        <div class="comic-characters col-xs-12 col-sm-6">
-                            <h4>Characters</h4>
-                            <ul>
-                                <li ng-repeat="character in comic.data.characters.items track by $index">{{character.name}}</li>
-                            </ul>
-                        </div>
-                        <div class="comic-creators col-xs-12 col-sm-6">
-                            <h4>Creators</h4>
-                            <ul>
-                                <li ng-repeat="creator in comic.data.creators.items track by $index">{{creator.name}}</li>
-                            </ul>
-                        </div>
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th colspan="2">Comic data</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Format</td>
-                                    <td>{{comic.data.format}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Pages</td>
-                                    <td>{{comic.data.pageCount}}</td>
-                                </tr>
-                                <tr>
-                                    <td>UPC</td>
-                                    <td>{{comic.data.upc}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Published</td>
-                                    <td>{{comic.data.dates[0].date | date}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Diamond code</td>
-                                    <td>{{comic.data.diamondCode}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>{{comic.data.prices[0].price | currency:'$'}}</td>
-                                </tr>
-                                <tr>
-                                    <td class="center-text" colspan="2"><a href="{{comic.data.urls[0].url}}" target="_blank">More info</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+  <article>
+    <ui-loading-and-error loaded="comic.loaded" error="comic.error" text="comic data"></ui-loading-and-error>
+    <div class="container-fluid" ng-if="comic.data">
+      <div class="comic-detail row">
+        <div class="comic-image col-xs-12 col-sm-5 col-md-4">
+          <img ng-src="{{comic.data.thumbnail.path+'/portrait_uncanny.'+comic.data.thumbnail.extension}}" alt="{{comic.data.title}}">
+        </div>
+        <div class="comic-info col-xs-12 col-sm-7 col-md-8">
+          <h2 class="comic-title">{{comic.data.title}}</h2>
+          <p class="description">{{comic.data.description}}</p>
+          <div class="comic-data">
+            <div class="comic-characters col-xs-12 col-sm-6">
+              <h4>Characters</h4>
+              <ul>
+                <li ng-repeat="character in comic.data.characters.items track by $index">{{character.name}}</li>
+              </ul>
             </div>
-        </div>     
-    </article>
+            <div class="comic-creators col-xs-12 col-sm-6">
+              <h4>Creators</h4>
+              <ul>
+                <li ng-repeat="creator in comic.data.creators.items track by $index">{{creator.name}}</li>
+              </ul>
+            </div>
+            <table class="table table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th colspan="2">Comic data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Format</td>
+                  <td>{{comic.data.format}}</td>
+                </tr>
+                <tr>
+                  <td>Pages</td>
+                  <td>{{comic.data.pageCount}}</td>
+                </tr>
+                <tr>
+                  <td>UPC</td>
+                  <td>{{comic.data.upc}}</td>
+                </tr>
+                <tr>
+                  <td>Published</td>
+                  <td>{{comic.data.dates[0].date | date}}</td>
+                </tr>
+                <tr>
+                  <td>Diamond code</td>
+                  <td>{{comic.data.diamondCode}}</td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td>{{comic.data.prices[0].price | currency:'$'}}</td>
+                </tr>
+                <tr>
+                  <td class="center-text" colspan="2">
+                    <a href="{{comic.data.urls[0].url}}" target="_blank">More info</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
 </section>

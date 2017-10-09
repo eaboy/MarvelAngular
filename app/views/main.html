@@ -4,13 +4,15 @@
 <div class="container-fluid">
   <div class="row">
     <section class="main-section">
-      <h2 class="section-title">{{main.hulk.name}}</h2>
+      <h2 class="section-title">Comic list</h2>
       <ui-loading-and-error loaded="main.loaded" error="main.error" text="comic list"></ui-loading-and-error>
       <div class="comic-list ideal-state" ng-if="main.loaded">
         <article class="comic-card" ng-repeat="comic in main.comics">
           <h4 class="comic-name">{{comic.title}}</h4>
           <img ng-src="{{comic.thumbnail.path+'/portrait_fantastic.'+comic.thumbnail.extension}}" alt="{{comic.title}}" class="comic-thumbnail">
-          <button class="btn btn-success goto-details" ng-click="main.gotoDetails(comic.id)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          <button class="btn btn-success goto-details" ng-click="main.gotoDetails(comic.id)">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
         </article>
       </div>
     </section>
@@ -24,7 +26,9 @@
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <li ng-repeat="page in main.pages" ng-class="main.actualPage === page ? 'active' : ''"><a href="" ng-click="main.loadPage(page)">{{page}}</a></li>
+      <li ng-repeat="page in main.pages" ng-class="main.actualPage === page ? 'active' : ''">
+        <a href="" ng-click="main.loadPage(page)">{{page}}</a>
+      </li>
       <li ng-class="main.actualPage === main.totalPages ? 'disabled' : ''">
         <a href="" aria-label="Next" ng-click="main.loadPage(main.actualPage + 1)">
           <span aria-hidden="true">&raquo;</span>
