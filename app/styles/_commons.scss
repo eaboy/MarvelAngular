@@ -18,6 +18,9 @@ section{
         font-family: 'hulkfont';
         font-size: 1.7em;
         color: $white-color;
+        &:hover, &:active, &:visited {
+            color: lightgreen;
+        }
     }
 }
 

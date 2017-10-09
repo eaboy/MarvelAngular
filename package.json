@@ -1,6 +1,9 @@
 {
   "name": "marvelangular",
   "private": true,
+  "scripts": {
+    "preinstall": "sudo apt-get install ruby-compass & sudo gem install compass"
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
