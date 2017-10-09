@@ -17,24 +17,15 @@ angular.module('marvelAngularApp')
     var itemsPerPage = 20;
     this.actualPage = 1;
 
-    apiService.getData('characters/1009351').get(
-      function (response) {
-        self.hulk = response.data.results[0];
-      },
-      function (error) {
-        console.log('Error: ' + error);
-      }
-    );
-
     this.updateData = function () {
       apiService.getData('characters/1009351/comics', itemsPerPage * (self.actualPage - 1)).get(
         function (response) {
           self.loaded = true;
           self.totalPages = paginationService.getTotalPages(response.data.total, itemsPerPage);
           self.pages = paginationService.getPages(self.actualPage, self.totalPages);
-          $timeout(function(){
+          $timeout(function () {
             self.comics = response.data.results;
-          },0);
+          }, 0);
         },
         function (error) {
           self.error = true;
@@ -50,8 +41,8 @@ angular.module('marvelAngularApp')
       self.updateData();
     };
 
-    this.gotoDetails = function(comicId) {
-      $location.path('/comic/'+comicId);
+    this.gotoDetails = function (comicId) {
+      $location.path('/comic/' + comicId);
     };
 
     this.updateData();

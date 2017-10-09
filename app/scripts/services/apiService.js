@@ -13,7 +13,7 @@ angular.module('marvelAngularApp')
   .service('apiService', ['$resource', 'baseURL', 'publicKey', 'privateKey', 'md5', function ($resource, baseURL, publicKey, privateKey, md5) {
 
     function getHash(timeStamp) {
-      return md5.createHash(timeStamp+privateKey+publicKey);
+      return md5.createHash(timeStamp + privateKey + publicKey);
     }
 
     // Function to retrieve data from API. Receives the resource as a parameter
